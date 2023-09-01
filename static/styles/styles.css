@@ -10,6 +10,31 @@
     background-position: 0% 50%;
   }
 }
+@keyframes fadeInBG {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #EEB868;
+  }
+}
+@keyframes caretPulse {
+  0% {
+    opacity: 1;
+  }
+  23% {
+    opacity: 1;
+  }
+  24% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 1;
+  }
+}
 @font-face {
   font-family: "AIAT Serif";
   src: url("/assets/fonts/inconsolata/Inconsolata-ExtraLight.ttf") format("truetype");
@@ -95,6 +120,7 @@ body {
   display: flex;
   left: 10%;
   margin-top: 2rem;
+  width: 80%;
 }
 .image-demo__image-border {
   width: 30%;
@@ -109,9 +135,27 @@ body {
 }
 .image-demo__sample-code {
   margin-top: 1rem;
+  width: 40%;
 }
 .image-demo__sample-code p {
   font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
   color: #fff;
   margin: 0;
+}
+.image-demo__alt-tag {
+  position: relative;
+  display: inline-block;
+  left: 4rem;
+  top: 0.25rem;
+  padding: 0.25rem;
+  animation: fadeInBG 1s forwards;
+  border-radius: 4px;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.75rem;
+  height: 3px;
+  background: #fff;
+  animation: caretPulse 1s infinite;
 }/*# sourceMappingURL=styles.css.map */

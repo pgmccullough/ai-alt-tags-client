@@ -1,10 +1,12 @@
 @use '../../static/styles/partials/variables/fonts' as *;
 
+
 .image-demo {
   position: relative;
   display: flex;
   left: 10%;
   margin-top: 2rem;
+  width: 80%;
   &__image-border {
     width: 30%;
     background: #fff;
@@ -18,10 +20,28 @@
   }
   &__sample-code {
     margin-top: 1rem;
+    width: 40%;
     & p {
       font: 2rem $serif;
       color: #fff;
       margin: 0;
     }
   }
+  &__alt-tag {
+    position: relative;
+    display: inline-block;
+    left: 4rem;
+    top: 0.25rem;
+    padding: 0.25rem;
+    animation: fadeInBG 1s forwards;
+    border-radius: 4px;
+  }
+}
+
+.caret {
+  display: inline-block;
+  width: 0.75rem;
+  height: 3px;
+  background: #fff;
+  animation: caretPulse 1s infinite;
 }
