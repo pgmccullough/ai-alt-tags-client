@@ -29,7 +29,7 @@ export const ImageDemo = () => {
       clearTimeout(initPause);
       clearTimeout(writePause);
     };
-  },[])
+  },[ previewImage.value ])
 
   const handleImageSubmit = (imgUrl: string) => {
     previewImage.value = imgUrl;
