@@ -143,6 +143,7 @@ body {
   font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
   color: #fff;
   margin: 0;
+  word-break: break-all;
 }
 .image-demo__alt-tag {
   position: relative;
