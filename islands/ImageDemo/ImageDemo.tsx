@@ -36,12 +36,17 @@ export const ImageDemo = () => {
     previewImage.value = imgUrl;
     animatedText.value = "";
     altText.value = "";
+    animatedTextPos.value = 0;
     const apiReq = await fetch('https://api.ai-alt-tags.com',{
       method: 'POST',
-      body: JSON.stringify({imgUrl})
+      body: JSON.stringify({imgUrl}),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      }
     })
     const response = await apiReq.json();
-    console.log(response);
+    altText.value = response.data;
+    animateText();
   };
 
   return (
