@@ -88,4 +88,30 @@ body {
   text-shadow: -1px 0px #fff;
   font-family: Inconsolata, Garamond, "Times New Roman", Times, serif;
   font-size: 2rem;
+}
+
+.image-demo {
+  position: relative;
+  display: flex;
+  left: 10%;
+  margin-top: 2rem;
+}
+.image-demo__image-border {
+  width: 30%;
+  background: #fff;
+  padding: 1rem;
+  transform: rotate(-2deg);
+  border-radius: 4px;
+  box-shadow: 0 0 6px 0 #666;
+}
+.image-demo__image {
+  width: 100%;
+}
+.image-demo__sample-code {
+  margin-top: 1rem;
+}
+.image-demo__sample-code p {
+  font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  color: #fff;
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */
