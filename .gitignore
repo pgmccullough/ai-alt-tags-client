@@ -10,3 +10,4 @@ _fresh/
 
 # SASS rendered files
 *.css
+*.css.map

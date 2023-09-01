@@ -1,9 +1,12 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
+// import { useSignal } from "@preact/signals";
+// import Counter from "../islands/Counter.tsx";
+import { Header } from "../components/Header/Header.tsx";
 
 export default function Home() {
-  const count = useSignal(3);
+  // const count = useSignal(3);
   return (
-    <>Welcome to the ai-alt-tags api</>
+    <>
+      <Header />
+    </>
   );
 }
