@@ -127,6 +127,7 @@ body {
 .image-demo__image-border {
   width: 100%;
   background: #fff;
+  margin: 1rem 0;
   padding: 1rem;
   transform: rotate(-2deg);
   border-radius: 4px;
@@ -135,6 +136,7 @@ body {
 @media (min-width: 1000px) {
   .image-demo__image-border {
     width: 30%;
+    margin: 1rem 2rem;
   }
 }
 .image-demo__image {

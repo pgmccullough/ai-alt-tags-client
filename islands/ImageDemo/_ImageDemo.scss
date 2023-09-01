@@ -14,12 +14,14 @@
   &__image-border {
     width: 100%;
     background: #fff;
+    margin: 1rem 0;
     padding: 1rem;
     transform: rotate(-2deg);
     border-radius: 4px;
     box-shadow: 0 0 6px 0 #666;
     @include desktop {
       width: 30%;
+      margin: 1rem 2rem;
     }
   }
   &__image {
