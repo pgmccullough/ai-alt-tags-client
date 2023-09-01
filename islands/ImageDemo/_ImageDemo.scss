@@ -1,9 +1,12 @@
 @use '../../static/styles/partials/variables/fonts' as *;
+@use '../../static/styles/partials/variables/palette' as *;
 
 
 .image-demo {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   left: 10%;
   margin-top: 2rem;
   width: 80%;
@@ -20,7 +23,7 @@
   }
   &__sample-code {
     margin-top: 1rem;
-    width: 40%;
+    width: 60%;
     & p {
       font: 2rem $serif;
       color: #fff;
@@ -35,6 +38,39 @@
     padding: 0.25rem;
     animation: fadeInBG 1s forwards;
     border-radius: 4px;
+  }
+  &__h2 {
+    font: 2.5rem $serif;
+    font-weight: 600;
+    color: #fff;
+    margin: 2rem 0;
+  }
+  &__content {
+    width: 100%;
+    margin: 0;
+    font: 1.25rem $serif;
+    color: #fff;
+  }
+  &__input {
+    font: 1.75rem $serif;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-bottom: 6px $color5 solid;
+    border-radius: 6px 6px 0 0;
+    margin: 1rem 1rem 1rem 0;
+    width: calc(80% - 1rem);
+  }
+  &__button {
+    margin: 1rem 0 1rem 1rem;
+    color: #fff;
+    background: $color5;
+    font: 1.75rem $serif;
+    align-self: stretch;
+    padding: 0 1rem;
+    border: none;
+    border-radius: 6px;
+    width: calc(20% - 1rem);
+    cursor: pointer;
   }
 }
 

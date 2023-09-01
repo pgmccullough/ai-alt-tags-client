@@ -1,23 +1,24 @@
-import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
+import { useComputed, useSignal } from "@preact/signals";
+import { useEffect, useRef } from "preact/hooks";
 
 export const ImageDemo = () => {
-  const altText = "Smiling young couple taking a selfie and waving on wooded road.";
+  const altText = useSignal("Smiling young couple taking a selfie and waving on wooded road.");
 
-  const animatedText = useSignal("")
+  const previewImage = useSignal("/assets/images/sample_preview_1.jpg");
+  const animatedText = useSignal("");
   const animatedTextPos = useSignal(0);
-  const imageTagOpen = useSignal("&lt;img<br />&nbsp;&nbsp;&nbsp;&nbsp;src=\"sample_preview_1.jpg\"");
-  const imageTagClose = useSignal("&gt;");
-
-  const animateText = () => {
-    if(animatedTextPos.value <= altText.length) {
-      animatedText.value = `alt="${altText.slice(0,animatedTextPos.value)}`;
-      animatedTextPos.value++;
-      setTimeout(() => animateText(),50);
-    }
-  }
+  const imageTagOpen = useComputed(() => `&lt;img<br />&nbsp;&nbsp;&nbsp;&nbsp;src=\"${previewImage.value.split("/").at(-1)}\"`);
+  const imageTagClose = useSignal("/&gt;");
+  const imageURL = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    const animateText = () => {
+      if(animatedTextPos.value <= altText.value.length) {
+        animatedText.value = `alt="${altText.value.slice(0,animatedTextPos.value)}`;
+        animatedTextPos.value++;
+        setTimeout(() => animateText(),50);
+      }
+    }
     const initPause = setTimeout(() => {
       animatedText.value = "alt=\"";
     }, 2000);
@@ -30,11 +31,17 @@ export const ImageDemo = () => {
     };
   },[])
 
+  const handleImageSubmit = (imgUrl: string) => {
+    previewImage.value = imgUrl;
+    animatedText.value = "";
+    altText.value = "";
+  };
+
   return (
     <section class="image-demo">
       <figure class="image-demo__image-border">
         <img
-          src="/assets/images/sample_preview_1.jpg"
+          src={previewImage.value}
           class="image-demo__image"
         />
       </figure>
@@ -51,6 +58,16 @@ export const ImageDemo = () => {
         }
         <p dangerouslySetInnerHTML={{__html: imageTagClose.value}} />
       </article>
+      <h2 class="image-demo__h2">Try it yourself!</h2>
+      <p class="image-demo__content">
+        Enter the url of an online image into the bar below for an auto-generated alt tag!
+      </p>
+      <input
+        class="image-demo__input"
+        placeholder="Image URL"
+        ref={imageURL}
+      />
+      <button class="image-demo__button" onClick={() => handleImageSubmit(imageURL.current!.value)}>SUBMIT</button>
     </section>
   )
 }

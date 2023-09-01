@@ -118,6 +118,8 @@ body {
 .image-demo {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   left: 10%;
   margin-top: 2rem;
   width: 80%;
@@ -135,7 +137,7 @@ body {
 }
 .image-demo__sample-code {
   margin-top: 1rem;
-  width: 40%;
+  width: 60%;
 }
 .image-demo__sample-code p {
   font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
@@ -150,6 +152,39 @@ body {
   padding: 0.25rem;
   animation: fadeInBG 1s forwards;
   border-radius: 4px;
+}
+.image-demo__h2 {
+  font: 2.5rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  font-weight: 600;
+  color: #fff;
+  margin: 2rem 0;
+}
+.image-demo__content {
+  width: 100%;
+  margin: 0;
+  font: 1.25rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  color: #fff;
+}
+.image-demo__input {
+  font: 1.75rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  border-bottom: 6px #EEB868 solid;
+  border-radius: 6px 6px 0 0;
+  margin: 1rem 1rem 1rem 0;
+  width: calc(80% - 1rem);
+}
+.image-demo__button {
+  margin: 1rem 0 1rem 1rem;
+  color: #fff;
+  background: #EEB868;
+  font: 1.75rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  align-self: stretch;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 6px;
+  width: calc(20% - 1rem);
+  cursor: pointer;
 }
 
 .caret {
