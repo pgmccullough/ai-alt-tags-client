@@ -125,19 +125,31 @@ body {
   width: 80%;
 }
 .image-demo__image-border {
-  width: 30%;
+  width: 100%;
   background: #fff;
   padding: 1rem;
   transform: rotate(-2deg);
   border-radius: 4px;
   box-shadow: 0 0 6px 0 #666;
 }
+@media (min-width: 1000px) {
+  .image-demo__image-border {
+    width: 30%;
+  }
+}
 .image-demo__image {
   width: 100%;
 }
 .image-demo__sample-code {
+  order: -1;
   margin-top: 1rem;
-  width: 60%;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .image-demo__sample-code {
+    order: 0;
+    width: 60%;
+  }
 }
 .image-demo__sample-code p {
   font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
@@ -149,6 +161,7 @@ body {
   position: relative;
   display: inline-block;
   left: 4rem;
+  width: calc(100% - 4rem);
   top: 0.25rem;
   padding: 0.25rem;
   animation: fadeInBG 1s forwards;
@@ -167,16 +180,21 @@ body {
   color: #fff;
 }
 .image-demo__input {
+  width: 100%;
   font: 1.75rem Inconsolata, Garamond, "Times New Roman", Times, serif;
   padding: 0.25rem 0.75rem;
   border: none;
   border-bottom: 6px #EEB868 solid;
   border-radius: 6px 6px 0 0;
-  margin: 1rem 1rem 1rem 0;
-  width: calc(80% - 1rem);
+  margin: 1rem 0 1rem 0;
+}
+@media (min-width: 1000px) {
+  .image-demo__input {
+    width: calc(80% - 1rem);
+    margin: 1rem 1rem 1rem 0;
+  }
 }
 .image-demo__button {
-  margin: 1rem 0 1rem 1rem;
   color: #fff;
   background: #EEB868;
   font: 1.75rem Inconsolata, Garamond, "Times New Roman", Times, serif;
@@ -184,8 +202,14 @@ body {
   padding: 0 1rem;
   border: none;
   border-radius: 6px;
-  width: calc(20% - 1rem);
+  margin: 0 0 1rem 0;
   cursor: pointer;
+}
+@media (min-width: 1000px) {
+  .image-demo__button {
+    width: calc(20% - 1rem);
+    margin: 1rem 0 1rem 1rem;
+  }
 }
 
 .caret {
