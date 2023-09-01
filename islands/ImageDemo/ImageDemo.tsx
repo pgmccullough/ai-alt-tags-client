@@ -11,14 +11,15 @@ export const ImageDemo = () => {
   const imageTagClose = useSignal("/&gt;");
   const imageURL = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    const animateText = () => {
-      if(animatedTextPos.value <= altText.value.length) {
-        animatedText.value = `alt="${altText.value.slice(0,animatedTextPos.value)}`;
-        animatedTextPos.value++;
-        setTimeout(() => animateText(),50);
-      }
+  const animateText = () => {
+    if(animatedTextPos.value <= altText.value.length) {
+      animatedText.value = `alt="${altText.value.slice(0,animatedTextPos.value)}`;
+      animatedTextPos.value++;
+      setTimeout(() => animateText(),50);
     }
+  }
+
+  useEffect(() => {
     const initPause = setTimeout(() => {
       animatedText.value = "alt=\"";
     }, 2000);
@@ -31,10 +32,16 @@ export const ImageDemo = () => {
     };
   },[ previewImage.value ])
 
-  const handleImageSubmit = (imgUrl: string) => {
+  const handleImageSubmit = async (imgUrl: string) => {
     previewImage.value = imgUrl;
     animatedText.value = "";
     altText.value = "";
+    const apiReq = await fetch('https://api.ai-alt-tags.com',{
+      method: 'POST',
+      body: JSON.stringify({imgUrl})
+    })
+    const response = await apiReq.json();
+    console.log(response);
   };
 
   return (
