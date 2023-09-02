@@ -96,15 +96,16 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   width: 90%;
   height: 5rem;
-  margin-top: 1rem;
-  margin-left: 5%;
-  background: #ccc;
+  top: 1rem;
+  left: 5%;
+  background-color: #ccc;
   border: 1px #fff solid;
   border-radius: 1rem;
-  opacity: 0.5;
+  opacity: 0.6;
   box-shadow: 0 0 6px 0 #000;
   align-items: center;
   justify-content: center;
@@ -115,6 +116,20 @@ body {
   font-size: 2rem;
 }
 
+.content-block {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 6px 0 #666 inset;
+  min-height: 10rem;
+}
+.content-block__h2 {
+  position: relative;
+  font: 2rem Inconsolata, Garamond, "Times New Roman", Times, serif;
+  color: #EF767A;
+  padding-top: 1rem;
+  text-align: center;
+}
+
 .image-demo {
   position: relative;
   display: flex;
@@ -122,6 +137,7 @@ body {
   align-items: flex-start;
   left: 10%;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 80%;
 }
 .image-demo__image-border {
